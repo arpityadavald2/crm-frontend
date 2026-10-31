@@ -1,7 +1,8 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
+import { BrowserRouter, Route, Routes } from 'react-router'
 import { AuthProvider } from './auth/AuthProvider'
 import Layout from './components/Layout'
 import CustomersPage from './pages/CustomersPage'
+import DashboardPage from './pages/DashboardPage'
 import LeadsPage from './pages/LeadsPage'
 import InvoicesPage from './pages/InvoicesPage'
 import InvoiceNewPage from './pages/InvoiceNewPage'
@@ -16,7 +17,7 @@ export default function App() {
       <AuthProvider>
         <Routes>
           <Route element={<Layout />}>
-            <Route path="/" element={<Navigate to="/customers" replace />} />
+            <Route path="/" element={<DashboardPage />} />
             <Route path="/customers" element={<CustomersPage />} />
             <Route path="/leads" element={<LeadsPage />} />
             <Route path="/invoices" element={<InvoicesPage />} />

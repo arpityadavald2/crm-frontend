@@ -93,3 +93,17 @@ export function issueInvoice(id: number): Promise<{ invoice: Invoice }> {
 export function cancelInvoice(id: number): Promise<{ invoice: Invoice }> {
   return api.post<{ invoice: Invoice }>(`/invoices/${id}/cancel`)
 }
+
+/** Totals for the dashboard. Everything is calculated by the server. */
+export type DashboardSummary = {
+  invoiceCounts: Record<InvoiceStatus, number>
+  billedPaise: number
+  receivedPaise: number
+  outstandingPaise: number
+  overdueCount: number
+  overduePaise: number
+}
+
+export function getSummary(): Promise<{ summary: DashboardSummary }> {
+  return api.get<{ summary: DashboardSummary }>('/invoices/summary')
+}

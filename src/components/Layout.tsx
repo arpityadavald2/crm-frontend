@@ -12,6 +12,9 @@ export default function Layout() {
         <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
           <nav className="flex items-center gap-6">
             <span className="font-semibold text-slate-900">CRM</span>
+            <Link to="/" className="text-slate-700 hover:text-slate-900">
+              Dashboard
+            </Link>
             <Link to="/customers" className="text-slate-700 hover:text-slate-900">
               Customers
             </Link>
