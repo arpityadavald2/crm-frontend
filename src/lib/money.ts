@@ -6,9 +6,9 @@ export function formatPaise(paise: number): string {
 }
 
 /** "1234.5" -> 123450 paise. Returns null when the text is not a valid amount. */
-export function rupeesToPaise(text: string): number | null {
+export function rupeesToPaise(text: string, maxPaise = 1_000_000_000): number | null {
   const m = /^(\d{1,9})(?:\.(\d{1,2}))?$/.exec(text.trim())
   if (!m) return null
   const paise = Number(m[1]) * 100 + Number((m[2] ?? '').padEnd(2, '0'))
-  return paise <= 1_000_000_000 ? paise : null
+  return paise <= maxPaise ? paise : null
 }

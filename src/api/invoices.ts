@@ -85,3 +85,11 @@ export function getInvoice(id: number): Promise<{ invoice: Invoice }> {
 export function createInvoice(input: NewInvoice): Promise<{ invoice: Invoice }> {
   return api.post<{ invoice: Invoice }>('/invoices', input)
 }
+
+export function issueInvoice(id: number): Promise<{ invoice: Invoice }> {
+  return api.post<{ invoice: Invoice }>(`/invoices/${id}/issue`)
+}
+
+export function cancelInvoice(id: number): Promise<{ invoice: Invoice }> {
+  return api.post<{ invoice: Invoice }>(`/invoices/${id}/cancel`)
+}
