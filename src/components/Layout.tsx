@@ -15,6 +15,9 @@ export default function Layout() {
             <Link to="/customers" className="text-slate-700 hover:text-slate-900">
               Customers
             </Link>
+            <Link to="/leads" className="text-slate-700 hover:text-slate-900">
+              Leads
+            </Link>
           </nav>
           <div className="flex items-center gap-4 text-sm text-slate-600">
             <span>
