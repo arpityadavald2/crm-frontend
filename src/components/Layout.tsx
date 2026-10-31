@@ -21,6 +21,9 @@ export default function Layout() {
             <Link to="/invoices" className="text-slate-700 hover:text-slate-900">
               Invoices
             </Link>
+            <Link to="/settings" className="text-slate-700 hover:text-slate-900">
+              Settings
+            </Link>
           </nav>
           <div className="flex items-center gap-4 text-sm text-slate-600">
             <span>
