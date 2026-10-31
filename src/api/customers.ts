@@ -44,3 +44,7 @@ export function updateCustomer(id: number, input: CustomerInput): Promise<{ cust
 export function deleteCustomer(id: number): Promise<void> {
   return api.delete<void>(`/customers/${id}`)
 }
+
+export function getCustomer(id: number): Promise<{ customer: Customer }> {
+  return api.get<{ customer: Customer }>(`/customers/${id}`)
+}
